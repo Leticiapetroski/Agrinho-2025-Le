@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festejando a Conexão Campo-Cidade | Agrinho Paraná</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e8f0e8;
+      color: #204020;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #1c3a1c;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-style: italic;
+      color: #3b6b3b;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #3b7a3b;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      margin: 6px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2f5c2f;
+    }
+
+    /* Acessibilidade */
+    .accessibility {
+      background-color: #6b9c6b;
+    }
+
+    .accessibility:hover {
+      background-color: #527352;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section.folder {
+      display: none;
+      background: #d4e6d4;
+      border: 2px solid #3b7a3b;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 40px;
+    }
+
+    section.folder.active {
+      display: block;
+    }
+
+    h2 {
+      color: #2a4d2a;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #3b7a3b;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 18px;
+      text-align: justify;
+      font-size: 1.1rem;
+    }
+
+    .images-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .images-container img {
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .images-container img:hover {
+      transform: scale(1.05);
+    }
+
+    a {
+      color: #1c3a1c;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: #114011;
+    }
+
+    /* Alto contraste */
+    body.high-contrast {
+      background: black;
+      color: white;
+    }
+
+    body.high-contrast button {
+      background-color: white;
+      color: black;
+    }
+
+    /* Fonte maior */
+    body.large-font {
+      font-size: 1.3rem;
+    }
+
+    /* Responsividade */
+    @media(max-width: 650px) {
+      .images-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .images-container img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Festejando a Conexão Campo-Cidade</h1>
+    <p>Projeto Agrinho Paraná - Valorizando o diálogo entre campo e cidade</p>
+  </header>
+
+  <nav aria-label="Menu principal">
+    <button onclick="showFolder('agricultura')">Agricultura e Inovação</button>
+    <button onclick="showFolder('cultura')">Cultura e Tradição</button>
+    <button onclick="showFolder('pesquisa')">Pesquisa e Desenvolvimento</button>
+    <button onclick="showFolder('pesquisasExternas')">Pesquisas Externas</button>
+  </nav>
+
+  <nav aria-label="Opções de acessibilidade" style="text-align:center; margin-bottom:40px;">
+    <button class="accessibility" onclick="increaseFont()">Aumentar Fonte</button>
+    <button class="accessibility" onclick="decreaseFont()">Diminuir Fonte</button>
+    <button class="accessibility" onclick="toggleContrast()">Alto Contraste</button>
+    <button class="accessibility" onclick="resetAccessibility()">Resetar</button>
+  </nav>
+
+  <main>
+    <!-- AGRICULTURA -->
+    <section id="agricultura" class="folder">
+      <h2>Agricultura e Inovação no Paraná</h2>
+      <p>
+        O Paraná é um dos principais estados produtores do Brasil, com destaque para soja, milho, trigo, café e carne bovina. A modernização da agricultura paranaense integra tecnologia, sustentabilidade e conhecimento tradicional, promovendo uma relação harmoniosa entre o campo e a cidade.
+      </p>
+      <p>
+        O uso de drones para monitoramento das lavouras, sistemas de irrigação inteligentes, e a agricultura de precisão garantem produtividade e respeito ao meio ambiente. Essa conexão tecnológica fortalece a economia local e melhora a qualidade de vida da população urbana e rural.
+      </p>
+      <div class="images-container" aria-label="Imagens sobre agricultura e inovação no Paraná">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Drones_in_agriculture_-_precision_farming_-_06.jpg" alt="Drone monitorando plantação" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Farming_in_Paraná_-_Machinery_in_field.jpg" alt="Máquina agrícola no Paraná" />
+      </div>
+      <p>
+        Pequenos agricultores também são beneficiados por programas de capacitação e inovação, como o Agrinho, que incentivam a integração dos saberes rurais com as tecnologias urbanas.
+      </p>
+    </section>
+
+    <!-- CULTURA -->
+    <section id="cultura" class="folder">
+      <h2>Cultura e Tradição Paranaense</h2>
+      <p>
+        O Paraná é marcado por uma rica diversidade cultural, fruto da mistura de povos indígenas, europeus (italianos, alemães, poloneses) e africanos. Festas típicas, culinária e artesanato reforçam a identidade do estado, aproximando a cidade do campo.
+      </p>
+      <p>
+        Eventos como a Festa do Pinhão, o Festival de Música do Paraná e as danças tradicionais são exemplos vivos dessa conexão. A valorização da cultura rural também promove o turismo e o fortalecimento das comunidades locais.
+      </p>
+      <div class="images-container" aria-label="Imagens sobre cultura e tradição no Paraná">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Festa_do_Pinh%C3%A3o_2017_06.jpg" alt="Festa do Pinhão no Paraná" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Dança_folclórica_no_Paraná.jpg" alt="Dança folclórica típica do Paraná" />
+      </div>
+      <p>
+        A cidade de Curitiba, capital do estado, mantém viva essa relação ao apoiar projetos culturais que valorizam as raízes rurais e o desenvolvimento urbano sustentável.
+      </p>
+    </section>
+
+    <!-- PESQUISA -->
+    <section id="pesquisa" class="folder">
+      <h2>Pesquisa e Desenvolvimento no Agronegócio Paranaense</h2>
+      <p>
+        Instituições como a Universidade Federal do Paraná (UFPR), Embrapa e Instituto Agronômico do Paraná (IAPAR) lideram pesquisas que unem ciência e tecnologia para melhorar a produção agrícola e a qualidade de vida no campo.
+      </p>
+      <p>
+        Projetos de sustentabilidade, controle biológico de pragas e desenvolvimento de novas cultivares adaptadas às condições climáticas do Paraná são exemplos de inovação que conectam o conhecimento rural ao urbano.
+      </p>
+      <div class="images-container" aria-label="Imagens sobre pesquisa e desenvolvimento no Paraná">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Universidade_Federal_do_Paraná_-_UFPR_-_Bloco_da_Engenharia.jpg" alt="Universidade Federal do Paraná" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Embrapa_Logo.svg" alt="Logo da Embrapa" style="width: 280px; height: auto;" />
+      </div>
+      <p>
+        A integração da ciência ao cotidiano rural e urbano fortalece a economia paranaense e preserva os recursos naturais para as futuras gerações.
+      </p>
+    </section>
+
+    <!-- PESQUISAS EXTERNAS -->
+    <section id="pesquisasExternas" class="folder">
+      <h2>Pesquisas e Referências Externas</h2>
+      <ul>
+        <li><a href="https://www.embrapa.br/busca-de-solucoes-tecnologicas/-/produto-servico/1400/agrinho" target="_blank" rel="noopener noreferrer">Projeto Agrinho - Embrapa</a></li>
+        <li><a href="https://www.senar.org.br/parana/" target="_blank" rel="noopener noreferrer">SENAR Paraná - Capacitação Rural</a></li>
+        <li><a href="https://www.parana.pr.gov.br" target="_blank" rel="noopener noreferrer">Governo do Estado do Paraná - Agricultura e Desenvolvimento</a></li>
+        <li><a href="https://www.ufpr.br" target="_blank" rel="noopener noreferrer">Universidade Federal do Paraná (UFPR)</a></li>
+      </ul>
+      <p>
+        Estes links são fontes confiáveis para aprofundamento nos temas que conectam campo e cidade, promovendo o desenvolvimento sustentável do Paraná.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Mostrar uma pasta e esconder as outras
+    function showFolder(id) {
+      const folders = document.querySelectorAll('.folder');
+      folders.forEach(folder => {
+        folder.classList.remove('active');
+      });
+      const selected = document.getElementById(id);
+      if (selected) selected.classList.add('active');
+      // Rolar para o conteúdo mostrado
+      selected.scrollIntoView({behavior: 'smooth'});
+    }
+
+    // Acessibilidade
+    function increaseFont() {
+      document.body.classList.add('large-font');
+    }
+    function decreaseFont() {
+      document.body.classList.remove('large-font');
+    }
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+    function resetAccessibility() {
+      document.body.classList.remove('large-font', 'high-contrast');
+    }
+  </script>
+</body>
+</html>
